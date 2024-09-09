@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open or Closed</title>
+  </head>
+  <body>
+    <a href id="status"></a>
+    <script>
+      function checkOpenOrClosed() {
+        // Define working hours and days for weekdays and weekends
+        const schedule = [
+          { days: [1, 2, 3, 4, 5], openingHour: 9, closingHour: 17 }, // Weekdays (Mon-Fri)
+          { days: [6], openingHour: 8, closingHour: 13 }, // Saturday
+          { days: [0], openingHour: 0, closingHour: 0 }, // Sunday closed
+        ];
+
+        // Get the current day and time
+        const now = new Date();
+        const currentHour = now.getHours();
+        const currentDay = now.getDay();
+
+        // Check the schedule for the current day
+        for (let period of schedule) {
+          if (period.days.includes(currentDay)) {
+            if (
+              currentHour >= period.openingHour &&
+              currentHour < period.closingHour
+            ) {
+              return "Open";
+            } else {
+              return "Closed";
+            }
+          }
+        }
+      }
+
+      // Display the status on the page
+      document.getElementById("status").innerText = checkOpenOrClosed();
+    </script>
+  </body>
+</html>
