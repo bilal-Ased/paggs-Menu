@@ -1,0 +1,204 @@
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.menu-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Tabs Navigation */
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 2px solid #eaeaea;
+  flex-wrap: wrap; /* Allow tabs to wrap on smaller screens */
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #333;
+  transition:
+    color 0.3s ease,
+    border-bottom 0.3s ease;
+  flex: 1; /* Allow buttons to take equal width */
+}
+
+.tabs button.active {
+  color: green;
+  border-bottom: 2px solid green;
+}
+
+.tabs button:hover {
+  color: green;
+}
+
+/* Menu Sections */
+.content {
+  padding: 30px 0;
+}
+
+h2 {
+  font-size: 28px;
+  color: green;
+  font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eaeaea;
+  padding-bottom: 10px;
+}
+
+h3 {
+  font-size: 22px;
+  color: green; /* Highlight section headings */
+  font-weight: 600;
+  margin: 20px 0 10px;
+  border-bottom: 2px solid #eaeaea; /* Underline for section headings */
+  padding-bottom: 5px; /* Space below the heading */
+}
+
+/* Section Backgrounds for Differentiation */
+.menu-section {
+  padding: 20px; /* Space around sections */
+  border-radius: 8px; /* Rounded corners for sections */
+  background-color: #f9f9f9; /* Light background color */
+  margin-bottom: 20px; /* Space between sections */
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.menu-section h3 {
+  width: 100%;
+}
+
+/* Menu Item Styles */
+.menu-item {
+  margin-bottom: 20px;
+  padding: 10px 0;
+  transition: background-color 0.3s ease;
+  width: 50%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .menu-item {
+    width: 100%;
+  }
+}
+
+.menu-item .menu-item-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin: 10px; /* Add padding for better spacing */
+  padding: 10px; /* Add padding for better spacing */
+  background-color: white; /* Background color for the menu item body */
+  border-radius: 8px; /* Match the section's border radius */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Add shadow effect */
+  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  height: 100%;
+}
+
+.menu-item .menu-item-body:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); /* Shadow effect on hover */
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: #f8f8f8;
+}
+
+.menu-item .name {
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.menu-item .v-label {
+  font-size: 14px;
+  color: green;
+  margin-left: 6px;
+}
+
+.menu-item .description {
+  font-size: 14px;
+  color: #666;
+  margin: 4px 0;
+  flex-grow: 1; /* Allow description to grow */
+}
+
+.menu-item .price {
+  font-size: 18px;
+  color: green;
+  font-weight: 600;
+  text-align: right;
+  margin-left: auto;
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .tabs button {
+    font-size: 16px;
+    flex: 1 1 100%; /* Make buttons full width */
+    margin-bottom: 10px; /* Space between buttons */
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  .menu-item .price {
+    text-align: left; /* Align price to left on smaller screens */
+    margin-top: 4px; /* Space above price */
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  .menu-item {
+    padding: 8px 0;
+  }
+}
